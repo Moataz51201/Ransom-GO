@@ -33,7 +33,7 @@ func generateRSAKeys(bits int) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("✅ Private key saved to private.pem")
+	fmt.Println("Private key saved to private.pem")
 
 	// Extract public key from private key
 	publicKey := &privateKey.PublicKey
@@ -59,7 +59,7 @@ func generateRSAKeys(bits int) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("✅ Public key saved to public.pem")
+	fmt.Println("Public key saved to public.pem")
 
 	return nil
 }
@@ -67,8 +67,8 @@ func generateRSAKeys(bits int) error {
 func main() {
 	err := generateRSAKeys(2048) // Use 2048 or 4096 for strong encryption
 	if err != nil {
-		fmt.Println("❌ Error generating keys:", err)
+		fmt.Println("Error generating keys:", err)
 	} else {
-		fmt.Println("🔐 RSA key pair generated successfully!")
+		fmt.Println("RSA key pair generated successfully!")
 	}
 }
